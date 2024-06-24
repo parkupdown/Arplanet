@@ -8,6 +8,7 @@ import ConcertDetail from "./components/Concert/ConcertDetail";
 import News from "./pages/News";
 import Ticket from "./pages/Ticket";
 import CEO from "./pages/CEO";
+import Login from "./pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,14 @@ export const router = createBrowserRouter([
     element: (
       <Layout>
         <Ticket />
+      </Layout>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <Layout>
+        <Login />
       </Layout>
     ),
   },

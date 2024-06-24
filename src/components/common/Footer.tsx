@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { CiMail } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
-import { SiNaver } from "react-icons/si";
 import { theme } from "../../style/theme";
-import ArplanetKaKao from "../Home/ArplanetKaKao";
+import { FaUserCog } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigator = useNavigate();
+  const goLogin = () => {
+    navigator(`/login`);
+  };
   return (
     <StyledFooter>
       <div className="information">
@@ -23,7 +26,9 @@ export default function Footer() {
           <span>degined & developed by UPDOWN.</span>
         </div>
       </div>
-      <div className="etc"></div>
+      <div className="etc">
+        <FaUserCog onClick={goLogin} />
+      </div>
     </StyledFooter>
   );
 }
@@ -81,25 +86,24 @@ const StyledFooter = styled.div`
     justify-content: space-evenly;
     align-items: center;
     font-size: ${theme.text.size.medium};
+    font-weight: ${theme.text.weight.semithin};
     @media (max-width: ${theme.viewSize.phone}) {
       font-size: ${theme.text.size.small};
+      font-weight: ${theme.text.weight.thin};
     }
-    .news {
-      button {
-        padding: 10px 15px;
-        color: ${theme.color.white};
-        background-color: ${theme.color.black};
-        border: none;
-        border-radius: 10px;
+    svg {
+      cursor: pointer;
+      transition: 0.2s all ease-in;
+      width: 30px;
+      height: 30px;
+      @media (max-width: ${theme.viewSize.phone}) {
+        width: 20px;
+        height: 20px;
       }
     }
-    .sns {
-      svg {
-        @media (max-width: ${theme.viewSize.phone}) {
-          font-size: ${theme.text.size.medium};
-        }
-        margin-left: 10px;
-      }
+    svg:hover {
+      scale: 1.2;
+      color: black;
     }
   }
 `;
