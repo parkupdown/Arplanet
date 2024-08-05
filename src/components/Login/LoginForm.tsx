@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { LoginProps, jwtT } from "../../model/login.model";
 import { fetchLogin } from "../../api/login.api";
 import { setToken } from "../../store/authStore";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const {
@@ -10,12 +11,13 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginProps>();
-
+  const navigator = useNavigate();
   const onSubmit: SubmitHandler<LoginProps> = async (data) => {
     // 여기서 이제 back으로 데이터를 보내야함
     const jwt: jwtT = await fetchLogin(data);
     if (jwt) {
       setToken(jwt);
+      navigator(`/admin`);
     }
   };
 

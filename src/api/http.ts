@@ -21,6 +21,25 @@ export const httpAuth = createDefaultHttp({
   headers: { Authorization: getToken() ? getToken() : undefined },
 });
 
+httpAuth.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    if (error.response) {
+      switch (error.response.status) {
+        case 404:
+          return Promise.resolve({ data: [] });
+        case 401:
+          window.location.href = "/";
+          return alert("권한이 없습니다.");
+        default:
+          break;
+      }
+    }
+  }
+);
+
 http.interceptors.response.use(
   (response) => {
     return response;
