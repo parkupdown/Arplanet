@@ -20,6 +20,18 @@ export const http = createDefaultHttp();
 export const httpAuth = createDefaultHttp({
   headers: { Authorization: getToken() ? getToken() : undefined },
 });
+httpAuth.interceptors.request.use(
+  (config) => {
+    const headerAuthorization = config.headers.Authorization;
+    if (!headerAuthorization) {
+      config.headers.Authorization = getToken();
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 httpAuth.interceptors.response.use(
   (response) => {
