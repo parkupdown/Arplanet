@@ -11,7 +11,7 @@ export default function ArplanetAbout() {
 
   return (
     <StyledArplanetAbout onClick={goAbout}>
-      <img src={`${S3URL}Minho.jpg`} />
+      <img src={`${S3URL}Minho_2.jpg`} />
       <div className="mention">
         <span>공연의 예술, ARPLANET에서 시작됩니다.</span>
         <span className="button">ABOUT</span>
@@ -26,7 +26,7 @@ const StyledArplanetAbout = styled.div`
 
   img {
     width: 100%;
-    height: 450px;
+    height: 470px;
     object-fit: cover;
     transition: transform 0.3s ease;
     @media (max-width: ${theme.viewSize.phone}) {
