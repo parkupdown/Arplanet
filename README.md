@@ -1,4 +1,4 @@
-# 아르플래닛
+# 아르플래닛
 
 <p align="center">
 <img  src="https://github.com/user-attachments/assets/e76ef0d1-c65d-4a0e-b28a-00473341294a"/>
