@@ -15,7 +15,7 @@
 
 ## 개요
 > 프로젝트: 아르플래닛 <br/>
-프로젝트 개발 기간: 2024.05 ~ 2024.06 <br/>
+프로젝트 개발 기간: 2024.05 ~ 2024.06 (개인)<br/>
 사용 기술: ReactTS, Express.js, styled-components, mongodb, vercel, ec2, s3, git <br/>
 배포: https://arplanet.co.kr/
 
