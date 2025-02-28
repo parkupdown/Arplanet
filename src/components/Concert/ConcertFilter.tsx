@@ -99,6 +99,7 @@ export default function ConcertFilter() {
           {isActiveY && (
             <div className="option" onClick={handleYearOption}>
               <li id="all">전체</li>
+              <li id="2024">2025</li>
               <li id="2024">2024</li>
               <li id="2023">2023</li>
             </div>
