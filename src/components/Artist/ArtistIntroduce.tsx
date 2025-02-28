@@ -60,7 +60,7 @@ const StyledArtistIntroduce = styled.div`
         img {
           width: 550px;
           height: 300px;
-          object-fit: cover;
+          object-fit: contain;
           @media (max-width: ${theme.viewSize.phone}) {
             width: 160px;
             height: 110px;
