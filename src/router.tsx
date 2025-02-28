@@ -9,7 +9,6 @@ import News from "./pages/News";
 import Ticket from "./pages/Ticket";
 import CEO from "./pages/CEO";
 import Login from "./pages/Login";
-import Admin from "./pages/Admin";
 
 export const router = createBrowserRouter([
   {
@@ -81,14 +80,6 @@ export const router = createBrowserRouter([
     element: (
       <Layout>
         <Login />
-      </Layout>
-    ),
-  },
-  {
-    path: "/admin",
-    element: (
-      <Layout>
-        <Admin />
       </Layout>
     ),
   },

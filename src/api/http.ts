@@ -61,8 +61,6 @@ http.interceptors.response.use(
       switch (error.response.status) {
         case 404:
           return Promise.resolve({ data: [] });
-        case 401:
-          return alert("권한이 없습니다.");
         default:
           break;
       }

@@ -12,12 +12,15 @@ export default function LoginForm() {
     formState: { errors },
   } = useForm<LoginProps>();
   const navigator = useNavigate();
+
   const onSubmit: SubmitHandler<LoginProps> = async (data) => {
-    // 여기서 이제 back으로 데이터를 보내야함
-    const jwt: jwtT = await fetchLogin(data);
+    const response = await fetchLogin(data);
+    let jwt = response?.headers["authorization"];
     if (jwt) {
       setToken(jwt);
-      navigator(`/admin`);
+      console.log("jwt 저장");
+      // navigator(`/admin`);
+      // 여기서 어드민 페이지 개발 시작하면됨
     }
   };
 
