@@ -1,10 +1,8 @@
 export const showYearFormatter = (year: string): string => {
   if (year === "all") {
     return "전체";
-  } else if (year === "2024") {
-    return "2024";
   }
-  return "2023";
+  return year;
 };
 
 export const showStatusFormatter = (status: string): string => {
